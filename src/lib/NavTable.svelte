@@ -25,7 +25,6 @@
     }
 </script>
 
-<aside>
     <div class="grid">
         <nav>
             {#each btn_classes as btn}
@@ -36,4 +35,3 @@
         </nav>
     </div>
     <Submit />
-</aside>
