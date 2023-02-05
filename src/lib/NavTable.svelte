@@ -4,12 +4,13 @@
 
     export let problems: QuizProblemWithAnswer[];
     export let cur_index: number;
+    export let classes: string;
 
     function choose_class(index: number) {
-        let class_outline = problems[index].user_answer !== undefined ? "" : "outline";
-        let class_contrast =
-            cur_index !== index ? "" : "secondary";
-        return `${class_contrast} ${class_outline}`;
+        let class_outline =
+            problems[index].user_answer !== undefined ? "" : "outline";
+        let class_contrast = cur_index !== index ? "" : "secondary";
+        return `${class_contrast} ${class_outline} col`;
     }
 
     $: btn_classes = problems.map((problem, index) => {
@@ -25,13 +26,15 @@
     }
 </script>
 
-    <div class="grid">
-        <nav>
+<aside class={classes}>
+    <article>
+        <div class="row row-cols-3">
             {#each btn_classes as btn}
-                <button class={btn.class}
-                    on:click={() => chooseOption(btn.id)}
-                >{btn.id + 1}</button>
+                <button class={btn.class} on:click={() => chooseOption(btn.id)}
+                    >{btn.id + 1}</button
+                >
             {/each}
-        </nav>
-    </div>
-    <Submit />
+        </div>
+        <Submit on:submit />
+    </article>
+</aside>
