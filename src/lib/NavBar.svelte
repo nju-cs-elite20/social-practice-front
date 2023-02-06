@@ -20,7 +20,7 @@
     <ul>
         <li>
             <a
-                href="#"
+                href="#top"
                 class="secondary"
                 on:click={() => (show_sidebar = !show_sidebar)}
             >
@@ -47,7 +47,7 @@
     </ul>
     <ul>
         <li>
-            <a href="#" class="secondary" on:click={() => toggleTheme()}>
+            <a href="#top" class="secondary" on:click={() => toggleTheme()}>
                 {#if theme === Theme.Light}
                     <svg
                         xmlns="http://www.w3.org/2000/svg"

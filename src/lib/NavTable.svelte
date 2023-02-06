@@ -6,7 +6,7 @@
     export let cur_index: number;
     export let classes: string;
 
-    function choose_class(index: number) {
+    function choose_class(index: number, cur_index: number) {
         let class_outline =
             problems[index].user_answer !== undefined ? "" : "outline";
         let class_contrast = cur_index !== index ? "" : "secondary";
@@ -16,7 +16,7 @@
     $: btn_classes = problems.map((problem, index) => {
         return {
             id: index,
-            class: choose_class(index),
+            class: choose_class(index, cur_index),
         };
     });
 
